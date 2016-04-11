@@ -287,6 +287,58 @@ public class BeanGame extends Application {
 		// Put 28 obstacles into pane
 		a.getChildren().addAll(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, 
 						c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28);
+		
+		// Create 8 button to judge the bean's path
+		Circle bt1 = new Circle();
+		bt1.setLayoutX(100);
+		bt1.setLayoutY(350);
+		bt1.setRadius(0.1);
+		bt1.setFill(Color.WHITE);
+		
+		Circle bt2 = new Circle();
+		bt2.setLayoutX(150);
+		bt2.setLayoutY(350);
+		bt2.setRadius(0.1);
+		bt2.setFill(Color.WHITE);
+		
+		Circle bt3 = new Circle();
+		bt3.setLayoutX(200);
+		bt3.setLayoutY(350);
+		bt3.setRadius(0.1);
+		bt3.setFill(Color.WHITE);
+		
+		Circle bt4 = new Circle();
+		bt4.setLayoutX(250);
+		bt4.setLayoutY(350);
+		bt4.setRadius(0.1);
+		bt4.setFill(Color.WHITE);
+		
+		Circle bt5 = new Circle();
+		bt5.setLayoutX(300);
+		bt5.setLayoutY(350);
+		bt5.setRadius(0.1);
+		bt5.setFill(Color.WHITE);
+		
+		Circle bt6 = new Circle();
+		bt6.setLayoutX(350);
+		bt6.setLayoutY(350);
+		bt6.setRadius(0.1);
+		bt6.setFill(Color.WHITE);
+		
+		Circle bt7 = new Circle();
+		bt7.setLayoutX(400);
+		bt7.setLayoutY(350);
+		bt7.setRadius(0.1);
+		bt7.setFill(Color.WHITE);
+		
+		Circle bt8 = new Circle();
+		bt8.setLayoutX(450);
+		bt8.setLayoutY(350);
+		bt8.setRadius(0.1);
+		bt8.setFill(Color.WHITE);
+		
+		// Put 8 button into pane
+		a.getChildren().addAll(bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8);
 						
 		Scene scene = new Scene(a, 550, 400); // Decide the pane's area
 		primaryStage.setTitle("My funny bean game");  // This game title
