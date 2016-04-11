@@ -888,4 +888,32 @@ public class BeanGame extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();	
 	}
+	
+	// Let the bean can be like an animation
+	public void Routine(Circle Ball, Circle circle1, Circle circle2, Circle circle3, Circle circle4, Circle circle5, Circle circle6, Circle circle7, Circle bottom) {
+		
+		// Use KeyFrame to make an animation and use Duration to control the bean's speed, and use KeyValue to control ith site
+		Timeline r = new Timeline(
+			new KeyFrame(Duration.seconds(0),    new KeyValue(Ball.centerYProperty(), 50)),
+			new KeyFrame(Duration.seconds(0.1),  new KeyValue(Ball.centerYProperty(), circle1.getLayoutY() - 15)),
+			new KeyFrame(Duration.seconds(0.2),  new KeyValue(Ball.centerXProperty(), circle2.getLayoutX())),
+			new KeyFrame(Duration.seconds(0.2),  new KeyValue(Ball.centerYProperty(), circle2.getLayoutY() - 15)),
+			new KeyFrame(Duration.seconds(0.3),  new KeyValue(Ball.centerXProperty(), circle3.getLayoutX())),
+			new KeyFrame(Duration.seconds(0.3),  new KeyValue(Ball.centerYProperty(), circle3.getLayoutY() - 15)),
+			new KeyFrame(Duration.seconds(0.4),  new KeyValue(Ball.centerXProperty(), circle4.getLayoutX())),
+			new KeyFrame(Duration.seconds(0.4),  new KeyValue(Ball.centerYProperty(), circle4.getLayoutY() - 15)),
+			new KeyFrame(Duration.seconds(0.5),  new KeyValue(Ball.centerXProperty(), circle5.getLayoutX())),
+			new KeyFrame(Duration.seconds(0.5),  new KeyValue(Ball.centerYProperty(), circle5.getLayoutY() - 15)),
+			new KeyFrame(Duration.seconds(0.6),  new KeyValue(Ball.centerXProperty(), circle6.getLayoutX())),
+			new KeyFrame(Duration.seconds(0.6),  new KeyValue(Ball.centerYProperty(), circle6.getLayoutY() - 15)),
+			new KeyFrame(Duration.seconds(0.7),  new KeyValue(Ball.centerXProperty(), circle7.getLayoutX())),
+			new KeyFrame(Duration.seconds(0.7),  new KeyValue(Ball.centerYProperty(), circle7.getLayoutY() - 15)),
+			new KeyFrame(Duration.seconds(0.8),  new KeyValue(Ball.centerXProperty(), bottom.getLayoutX())),
+			new KeyFrame(Duration.seconds(0.85), new KeyValue(Ball.centerYProperty(), bottom.getLayoutY() - 5)));
+			r.play(); 
+	}
+	
+	public static void main (String[] args) {
+	    Application.launch(args);  
+	}
 }
