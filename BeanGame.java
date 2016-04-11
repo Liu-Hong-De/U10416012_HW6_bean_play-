@@ -21,6 +21,8 @@ import java.util.*;
 
 public class BeanGame extends Application { 
   
+  double X = 0, Y = 0;
+  
   @Override
   public void start(Stage primaryStage) {
 		
@@ -341,6 +343,546 @@ public class BeanGame extends Application {
 		a.getChildren().addAll(bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8);
 						
 		Scene scene = new Scene(a, 550, 400); // Decide the pane's area
+		
+		// If the user click the mouse, the bean game will begin
+		scene.setOnMouseClicked(e -> {
+			
+			X = 275;
+			Y = 50;
+			
+			// Create bean
+			Circle Ball = new Circle();
+			// Add ball into pane
+			a.getChildren().add(Ball);
+			
+			// Decide the bean's coordinate and its radius
+			Ball.setCenterX(X);
+			Ball.setCenterY(Y);
+			Ball.setRadius(6);
+			
+			// Let every bean's color arer different when the user clich the mouse
+			Color color = new Color(Math.random(), Math.random(), Math.random(), 0.8);
+			Ball.setFill(color);
+			
+			// Use random to decide the bean's path
+			int d = new Random().nextInt(128) + 1;
+			
+			// Path
+			switch(d){
+				case 1:
+					Routine(Ball, c1, c2, c6, c7, c12, c17, c23, bt1);
+					break;
+					
+				case 2:
+					Routine(Ball, c1, c2, c6, c7, c12, c17, c23, bt2);
+					break;
+					
+				case 3:
+					Routine(Ball, c1, c2, c6, c7, c12, c17, c24, bt2);
+					break;
+					
+				case 4:
+					Routine(Ball, c1, c2, c6, c7, c12, c17, c24, bt3);
+					break;
+					
+				case 5:
+					Routine(Ball, c1, c2, c6, c7, c12, c18, c24, bt2);
+					break;
+					
+				case 6:
+					Routine(Ball, c1, c2, c6, c7, c12, c18, c24, bt3);
+					break;
+					
+				case 7:
+					Routine(Ball, c1, c2, c6, c7, c12, c18, c25, bt3);
+					break;
+					
+				case 8:
+					Routine(Ball, c1, c2, c6, c7, c12, c18, c25, bt4);
+					break;
+					
+				case 9:
+					Routine(Ball, c1, c2, c6, c7, c13, c18, c24, bt2);
+					break;
+					
+				case 10:
+					Routine(Ball, c1, c2, c6, c7, c13, c18, c24, bt3);
+					break;
+					
+				case 11:
+					Routine(Ball, c1, c2, c6, c7, c13, c19, c25, bt3);
+					break;
+					
+				case 12:
+					Routine(Ball, c1, c2, c6, c7, c13, c19, c25, bt4);
+					break;
+					
+				case 13:
+					Routine(Ball, c1, c2, c6, c7, c13, c19, c26, bt4);
+					break;
+					
+				case 14:
+					Routine(Ball, c1, c2, c6, c7, c13, c19, c26, bt5);
+					break;
+					
+				case 15:
+					Routine(Ball, c1, c2, c6, c9, c13, c18, c24, bt2);
+					break;
+					
+				case 16:
+					Routine(Ball, c1, c2, c6, c9, c13, c18, c24, bt3);
+					break;
+					
+				case 17:
+					Routine(Ball, c1, c2, c6, c9, c13, c19, c25, bt3);
+					break;
+					
+				case 18:
+					Routine(Ball, c1, c2, c6, c9, c13, c19, c25, bt4);
+					break;
+					
+				case 19:
+					Routine(Ball, c1, c2, c6, c9, c13, c19, c26, bt4);
+					break;
+					
+				case 20:
+					Routine(Ball, c1, c2, c6, c9, c13, c19, c26, bt5);
+					break;
+					
+				case 21:
+					Routine(Ball, c1, c2, c6, c9, c14, c19, c25, bt3);
+					break;
+					
+				case 22:
+					Routine(Ball, c1, c2, c6, c9, c14, c19, c25, bt4);
+					break;
+					
+				case 23:
+					Routine(Ball, c1, c2, c6, c9, c14, c19, c26, bt4);
+					break;
+					
+				case 24:
+					Routine(Ball, c1, c2, c6, c9, c14, c19, c26, bt5);
+					break;
+					
+				case 25:
+					Routine(Ball, c1, c2, c6, c9, c14, c20, c26, bt4);
+					break;
+					
+				case 26:
+					Routine(Ball, c1, c2, c6, c9, c14, c20, c26, bt5);
+					break;
+					
+				case 27:
+					Routine(Ball, c1, c2, c6, c9, c14, c20, c27, bt5);
+					break;
+					
+				case 28:
+					Routine(Ball, c1, c2, c6, c9, c14, c20, c27, bt6);
+					break;
+					
+				case 29:
+					Routine(Ball, c1, c2, c4, c9, c13, c18, c24, bt2);
+					break;
+					
+				case 30:
+					Routine(Ball, c1, c2, c4, c9, c13, c18, c24, bt3);
+					break;
+					
+				case 31:
+					Routine(Ball, c1, c2, c4, c9, c13, c19, c25, bt3);
+					break;
+					
+				case 32:
+					Routine(Ball, c1, c2, c4, c9, c13, c19, c25, bt4);
+					break;
+					
+				case 33:
+					Routine(Ball, c1, c2, c4, c9, c13, c19, c26, bt4);
+					break;
+					
+				case 34:
+					Routine(Ball, c1, c2, c4, c9, c13, c19, c26, bt5);
+					break;
+					
+				case 35:
+					Routine(Ball, c1, c2, c4, c9, c14, c19, c25, bt3);
+					break;
+
+				case 36:
+					Routine(Ball, c1, c2, c4, c9, c14, c19, c25, bt4);
+					break;
+
+				case 37:
+					Routine(Ball, c1, c2, c4, c9, c14, c19, c26, bt4);
+					break;
+
+				case 38:
+					Routine(Ball, c1, c2, c4, c9, c14, c19, c26, bt5);
+					break;
+
+				case 39:
+					Routine(Ball, c1, c2, c4, c9, c14, c20, c26, bt4);
+					break;
+
+				case 40:
+					Routine(Ball, c1, c2, c4, c9, c14, c20, c26, bt5);
+					break;
+
+				case 41:
+					Routine(Ball, c1, c2, c4, c9, c14, c20, c27, bt5);
+					break;
+
+				case 42:
+					Routine(Ball, c1, c2, c4, c9, c14, c20, c27, bt6);
+					break;
+					
+				case 43:
+					Routine(Ball, c1, c2, c4, c10, c14, c19, c25, bt3);
+					break;
+					
+				case 44:
+					Routine(Ball, c1, c2, c4, c10, c14, c19, c25, bt4);
+					break;
+					
+				case 45:
+					Routine(Ball, c1, c2, c4, c10, c14, c19, c26, bt4);
+					break;
+					
+				case 46:
+					Routine(Ball, c1, c2, c4, c10, c14, c19, c26, bt5);
+					break;
+					
+				case 47:
+					Routine(Ball, c1, c2, c4, c10, c14, c20, c26, bt4);
+					break;
+					
+				case 48:
+					Routine(Ball, c1, c2, c4, c10, c14, c20, c26, bt5);
+					break;
+					
+				case 49:
+					Routine(Ball, c1, c2, c4, c10, c14, c20, c27, bt5);
+					break;
+					
+				case 50:
+					Routine(Ball, c1, c2, c4, c10, c14, c20, c27, bt6);
+					break;
+					
+				case 51:
+					Routine(Ball, c1, c2, c4, c10, c15, c20, c26, bt4);
+					break;
+				
+				case 52:
+					Routine(Ball, c1, c2, c4, c10, c15, c20, c26, bt5);
+					break;
+				
+				case 53:
+					Routine(Ball, c1, c2, c4, c10, c15, c20, c27, bt5);
+					break;
+				
+				case 54:
+					Routine(Ball, c1, c2, c4, c10, c15, c20, c27, bt6);
+					break;
+				
+				case 55:
+					Routine(Ball, c1, c2, c4, c10, c15, c21, c27, bt5);
+					break;
+				
+				case 56:
+					Routine(Ball, c1, c2, c4, c10, c15, c21, c27, bt6);
+					break;
+				
+				case 57:
+					Routine(Ball, c1, c2, c4, c10, c15, c21, c28, bt6);
+					break;
+				
+				case 58:
+					Routine(Ball, c1, c2, c4, c10, c15, c21, c28, bt7);
+					break;
+				
+				case 59:
+					Routine(Ball, c1, c3, c4, c9, c13, c18, c24, bt2);
+					break;
+				
+				case 60:
+					Routine(Ball, c1, c3, c4, c9, c13, c18, c24, bt3);
+					break;
+				
+				case 61:
+					Routine(Ball, c1, c3, c4, c9, c13, c19, c25, bt3);
+					break;
+				
+				case 62:
+					Routine(Ball, c1, c3, c4, c9, c13, c19, c25, bt4);
+					break;
+				
+				case 63:
+					Routine(Ball, c1, c3, c4, c9, c13, c19, c26, bt4);
+					break;
+				
+				case 64:
+					Routine(Ball, c1, c3, c4, c9, c13, c19, c26, bt5);
+					break;
+				
+				case 65:
+					Routine(Ball, c1, c3, c4, c9, c14, c19, c25, bt3);
+					break;
+				
+				case 66:
+					Routine(Ball, c1, c3, c4, c9, c14, c19, c25, bt4);
+					break;
+				
+				case 67:
+					Routine(Ball, c1, c3, c4, c9, c14, c19, c26, bt4);
+					break;
+				
+				case 68:
+					Routine(Ball, c1, c3, c4, c9, c14, c19, c26, bt5);;
+					break;
+				
+				case 69:
+					Routine(Ball, c1, c3, c4, c9, c14, c20, c26, bt4);
+					break;
+				
+				case 70:
+					Routine(Ball, c1, c3, c4, c9, c14, c20, c26, bt5);
+					break;
+				
+				case 71:
+					Routine(Ball, c1, c3, c4, c9, c14, c20, c27, bt5);
+					break;
+				
+				case 72:
+					Routine(Ball, c1, c3, c4, c9, c14, c20, c27, bt6);
+					break;
+				
+				case 73:
+					Routine(Ball, c1, c3, c4, c10, c14, c19, c25, bt3);
+					break;
+				
+				case 74:
+					Routine(Ball, c1, c3, c4, c10, c14, c19, c25, bt4);
+					break;
+				
+				case 75:
+					Routine(Ball, c1, c3, c4, c10, c14, c19, c26, bt4);
+					break;
+				
+				case 76:
+					Routine(Ball, c1, c3, c4, c10, c14, c19, c26, bt5);
+					break;
+				
+				case 77:
+					Routine(Ball, c1, c3, c4, c10, c14, c20, c26, bt4);
+					break;
+				
+				case 78:
+					Routine(Ball, c1, c3, c4, c10, c14, c20, c26, bt5);
+					break;
+				
+				case 79:
+					Routine(Ball, c1, c3, c4, c10, c14, c20, c27, bt5);
+					break;
+				
+				case 80:
+					Routine(Ball, c1, c3, c4, c10, c14, c20, c27, bt6);
+					break;
+				
+				case 81:
+					Routine(Ball, c1, c3, c4, c10, c15, c20, c26, bt4);
+					break;
+				
+				case 82:
+					Routine(Ball, c1, c3, c4, c10, c15, c20, c26, bt5);
+					break;
+				
+				case 83:
+					Routine(Ball, c1, c3, c4, c10, c15, c20, c27, bt5);
+					break;
+				
+				case 84:
+					Routine(Ball, c1, c3, c4, c10, c15, c20, c27, bt6);
+					break;
+				
+				case 85:
+					Routine(Ball, c1, c3, c4, c10, c15, c21, c27, bt5);
+					break;
+				
+				case 86:
+					Routine(Ball, c1, c3, c4, c10, c15, c21, c27, bt6);
+					break;
+				
+				case 87:
+					Routine(Ball, c1, c3, c4, c10, c15, c21, c28, bt6);
+					break;
+				
+				case 88:
+					Routine(Ball, c1, c3, c4, c10, c15, c21, c28, bt7);
+					break;
+				
+				case 89:
+					Routine(Ball, c1, c3, c5, c10, c14, c19, c25, bt3);
+					break;
+				
+				case 90:
+					Routine(Ball, c1, c3, c5, c10, c14, c19, c25, bt4);
+					break;
+				
+				case 91:
+					Routine(Ball, c1, c3, c5, c10, c14, c19, c26, bt4);
+					break;
+				
+				case 92:
+					Routine(Ball, c1, c3, c5, c10, c14, c19, c26, bt6);
+					break;
+				
+				case 93:
+					Routine(Ball, c1, c3, c5, c10, c14, c20, c26, bt4);
+					break;
+				
+				case 94:
+					Routine(Ball, c1, c3, c5, c10, c14, c20, c26, bt5);
+					break;
+				
+				case 95:
+					Routine(Ball, c1, c3, c5, c10, c14, c20, c27, bt5);
+					break;
+				
+				case 96:
+					Routine(Ball, c1, c3, c5, c10, c14, c20, c27, bt6);
+					break;
+				
+				case 97:
+					Routine(Ball, c1, c3, c5, c10, c15, c20, c26, bt4);
+					break;
+				
+				case 98:
+					Routine(Ball, c1, c3, c5, c10, c15, c20, c26, bt5);
+					break;
+				
+				case 99:
+					Routine(Ball, c1, c3, c5, c10, c15, c20, c27, bt5);
+					break;
+				
+				case 100:
+					Routine(Ball, c1, c3, c5, c10, c15, c20, c27, bt6);
+					break;
+				
+				case 101:
+					Routine(Ball, c1, c3, c5, c10, c15, c21, c27, bt5);
+					break;
+				
+				case 102:
+					Routine(Ball, c1, c3, c5, c10, c15, c21, c27, bt6);
+					break;
+				
+				case 103:
+					Routine(Ball, c1, c3, c5, c10, c15, c21, c28, bt6);
+					break;
+				
+				case 104:
+					Routine(Ball, c1, c3, c5, c10, c15, c21, c28, bt7);
+					break;
+				
+				case 105:
+					Routine(Ball, c1, c3, c5, c8, c15, c20, c26, bt4);
+					break;
+				
+				case 106:
+					Routine(Ball, c1, c3, c5, c8, c15, c20, c26, bt5);
+					break;
+				
+				case 107:
+					Routine(Ball, c1, c3, c5, c8, c15, c20, c27, bt5);
+					break;
+				
+				case 108:
+					Routine(Ball, c1, c3, c5, c8, c15, c20, c27, bt6);
+					break;
+				
+				case 109:
+					Routine(Ball, c1, c3, c5, c8, c15, c21, c27, bt5);
+					break;
+				
+				case 110:
+					Routine(Ball, c1, c3, c5, c8, c15, c21, c27, bt6);
+					break;
+				
+				case 111:
+					Routine(Ball, c1, c3, c5, c8, c15, c21, c28, bt6);
+					break;
+				
+				case 112:
+					Routine(Ball, c1, c3, c5, c8, c15, c21, c28, bt7);
+					break;
+				
+				case 113:
+					Routine(Ball, c1, c3, c5, c8, c11, c21, c27, bt5);
+					break;
+				
+				case 114:
+					Routine(Ball, c1, c3, c5, c8, c11, c21, c27, bt6);
+					break;
+				
+				case 115:
+					Routine(Ball, c1, c3, c5, c8, c11, c21, c28, bt6);
+					break;
+				
+				case 116:
+					Routine(Ball, c1, c3, c5, c8, c11, c21, c28, bt7);
+					break;
+				
+				case 117:
+					Routine(Ball, c1, c3, c5, c8, c11, c16, c28, bt6);
+					break;
+				
+				case 118:
+					Routine(Ball, c1, c3, c5, c8, c11, c16, c28, bt7);
+					break;
+				
+				case 119:
+					Routine(Ball, c1, c3, c5, c8, c11, c16, c22, bt7);
+					break;
+				
+				case 120:
+					Routine(Ball, c1, c2, c4, c9, c14, c19, c25, bt3);
+					break;
+				
+				case 121:
+					Routine(Ball, c1, c2, c4, c9, c14, c19, c25, bt4);
+					break;
+				
+				case 122:
+					Routine(Ball, c1, c2, c4, c9, c14, c19, c26, bt4);
+					break;
+				
+				case 123:
+					Routine(Ball, c1, c3, c5, c10, c15, c20, c26, bt4);
+					break;
+				
+				case 124:
+					Routine(Ball, c1, c2, c4, c9, c14, c20, c26, bt4);
+					break;
+				
+				case 125:
+					Routine(Ball, c1, c2, c4, c9, c14, c20, c26, bt5);
+					break;
+				
+				case 126:
+					Routine(Ball, c1, c2, c4, c9, c14, c20, c27, bt5);
+					break;
+				
+				case 127:
+					Routine(Ball, c1, c2, c4, c9, c14, c20, c27, bt6);
+					break;
+				
+				case 128:
+					Routine(Ball, c1, c3, c5, c8, c11, c16, c22, bt8);
+					break;		
+			}			
+		});
+		
 		primaryStage.setTitle("My funny bean game");  // This game title
 		primaryStage.setResizable(true);
 		primaryStage.setScene(scene);
